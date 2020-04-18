@@ -13,7 +13,7 @@ export class MapService {
   constructor(private http: HttpClient) {
   }
 
-  getPointsList(): Observable<any> {
+  getFlatsList(): Observable<any> {
     return this.http.get(`${this.baseUrl}`);
   }
 

@@ -5,10 +5,10 @@ import {CustomValidators} from 'ng4-validators';
 
 @Component({
   selector: 'app-register-point',
-  templateUrl: './register-point.component.html',
-  styleUrls: ['./register-point.component.css']
+  templateUrl: './register-flat.component.html',
+  styleUrls: ['./register-flat.component.css']
 })
-export class RegisterPointComponent implements OnInit {
+export class RegisterFlatComponent implements OnInit {
 
    latitude: number;
    longitude: number;

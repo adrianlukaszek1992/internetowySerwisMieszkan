@@ -7,7 +7,7 @@ import {AuthGuard} from './_guards';
 import {BookingMainComponent} from './booking-main/booking-main.component';
 import {VisitorComponent} from './visitor/visitor.component';
 import {MemberComponent} from './member/member.component';
-import {RegisterPointComponent} from './register-point/register-point.component';
+import {RegisterFlatComponent} from './register-flat/register-flat.component';
 
 const appRoutes
 
@@ -18,7 +18,7 @@ const appRoutes
   {path: '', component: VisitorComponent},
   {path: 'booking-main', component: BookingMainComponent},
   {path: 'member', component: MemberComponent},
-  {path: 'register-point', component: RegisterPointComponent},
+  {path: 'register-point', component: RegisterFlatComponent},
   // otherwise redirect to map
   {path: '**', redirectTo: 'visitor'}
 ];

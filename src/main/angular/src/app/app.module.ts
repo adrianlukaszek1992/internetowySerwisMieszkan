@@ -22,7 +22,7 @@ import {FormsModule} from '@angular/forms';
 import {AgmCoreModule} from '@agm/core';
 import {GoogleMapsComponent} from './visitor/google-maps/google-maps.component';
 import {MemberComponent} from './member/member.component';
-import {RegisterPointComponent} from './register-point/register-point.component'
+import {RegisterFlatComponent} from './register-flat/register-flat.component'
 
 @NgModule({
   imports: [
@@ -49,7 +49,7 @@ import {RegisterPointComponent} from './register-point/register-point.component'
     GoogleMapsComponent
     ,
     MemberComponent,
-    RegisterPointComponent],
+    RegisterFlatComponent],
   providers: [
     AuthGuard,
     AlertService,
