@@ -1,0 +1,68 @@
+
+@media (min-width: 1100px) {
+  .container{
+    max-width: 1900px;
+  }
+}
+
+#row {
+  overflow: hidden;
+}
+
+
+
+
+  #tableContainer{
+    float:left;
+    margin-top: 50px;
+    width: 35%;
+
+  }
+
+
+
+
+#mapContainer{
+  margin-top: 50px;
+  float:right;
+  width: 60%;
+
+
+}
+.table {
+  overflow: scroll;
+  height: 600px;
+  /*width: 180%;*/
+  border: 1px solid green;
+}
+
+#map {
+  height: 530px;
+
+}
+
+table {
+  width: 100%;
+  font: 14px Verdana;
+}
+
+table, th, td {
+  border: solid 1px #999999;
+  border-collapse: collapse;
+  padding: 2px 3px;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+}
+
+table tr.highlight {
+  background-color: #4CAF50 !important;
+  color: #ffffff;
+}
+
+
+
+
+

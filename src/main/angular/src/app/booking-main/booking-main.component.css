@@ -1,0 +1,11 @@
+input:invalid {
+  color: red;
+  /* turn to red as long as pattern do not match */
+}
+input:invalid+b:before {
+  content: 'Invalid Email format';/* add text untill patterns matches */
+}
+input:invalid+b+[type="submit"] {
+  display: none; /* hide input submit untill pattern matches */
+}
+

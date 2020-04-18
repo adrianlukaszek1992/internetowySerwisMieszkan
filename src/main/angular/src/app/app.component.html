@@ -1,0 +1,33 @@
+﻿
+<div class="jumbotron" style="background:darkslategrey !important">
+  <div class="container">
+    <nav class="navbar navbar-light" style="background-color: darkgrey;">
+
+      <div class="row">
+        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+        <a [routerLink]="['/login']" class="btn btn-link">Login</a>
+        <a [routerLink]="['']" class="btn btn-link">Rent a flat</a>
+      </div>
+
+      <div class="row">
+        <div class="input-group">
+          <input class="form-control" placeholder="Search">
+          <button class="btn btn-primary">Search</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<router-outlet></router-outlet>
+
+<div class="jumbotron" style="background:darkslategrey !important">
+  <div class="container">
+    <div class="row" align="center">
+      <div class="col-sm-6 offset-sm-3">
+        <p>Copyright: Bartosz Krok, Adrian Łukaszek, Warsaw 2018</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

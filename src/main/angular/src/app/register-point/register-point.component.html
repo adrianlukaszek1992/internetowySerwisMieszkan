@@ -1,0 +1,55 @@
+<h3 style="margin: 10px">Register Flat</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="form-group">
+      <label for="name">Country</label>
+      <input type="text" class="form-control" id="name"     formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="LastName">City</label>
+      <input type="text" class="form-control" id="LastName"   formControlName="lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="Email">street</label>
+      <input type="text" class="form-control" id="Email"   formControlName="email"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+      <b></b>
+    </div>
+
+    <div class="form-group">
+      <label for="Email">Adress</label>
+      <input type="text" class="form-control" id="Email"   formControlName="email"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+      <b></b>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="Email">Price per Day</label>
+      <input type="text" class="form-control" id="Email"   formControlName="email"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">
+      <b></b>
+    </div>
+
+
+    <button type="submit" class="btn btn-success" [disabled]="!form.valid || !startDateEndDateCheck || !nameValidation">Submit</button>
+  </form>
+
+
+</div>
+
+<div [hidden]="!submitted">
+
+  <div [hidden]="!validationFailed">
+    <h4>The selected point is not avalabe at this date</h4>
+    <button class="btn btn-success" (click)="newBooking()"><<Back</button>
+  </div>
+
+  <div [hidden]="validationFailed">
+    <h4>You submitted successfully!</h4>
+    <button class="btn btn-success" (click)="newBooking()">Add</button>
+  </div>
+
+</div>
+
+

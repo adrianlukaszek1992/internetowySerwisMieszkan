@@ -1,0 +1,60 @@
+<h3 style="margin: 10px">Booking</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+<!--    <div class="form-group">-->
+<!--      <label for="name">Name</label>-->
+<!--      <input type="text" class="form-control" id="name"     formControlName="name">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="LastName">Last Name</label>-->
+<!--      <input type="text" class="form-control" id="LastName"   formControlName="lastname">-->
+<!--    </div>-->
+
+<!--    <div class="form-group">-->
+<!--      <label for="Email">Email</label>-->
+<!--      <input type="text" class="form-control" id="Email"   formControlName="email"  pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}">-->
+<!--      <b></b>-->
+<!--    </div>-->
+
+    <div class="form-group" >
+      <label for="startDate">Start Date</label>
+      <input type="date" class="form-control" id="startDate" formControlName="startDate">
+    </div>
+
+    <div class="form-group" >
+      <label for="endDate">End Date</label>
+      <input type="date" class="form-control" id="endDate" formControlName="endDate" (blur)="checkStartEndDates()">
+      <div [hidden]="startDateEndDateCheck" style="color: red">
+        <h4>End Date must be bigger than Start Date</h4>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="pointName">Flat Nae</label>
+      <input type="text" class="form-control" id="pointName"   value= "Name1"  disabled="disabled">
+    </div>
+
+
+    <button type="submit" class="btn btn-success" >Submit</button>
+  </form>
+<!--  [disabled]="!form.valid || !startDateEndDateCheck || !nameValidation"-->
+
+</div>
+
+<div [hidden]="!submitted">
+
+  <div [hidden]="!validationFailed">
+  <h4>The selected point is not avalabe at this date</h4>
+  <button class="btn btn-success" (click)="newBooking()"><<Back</button>
+  </div>
+
+  <div [hidden]="validationFailed">
+    <h4>Booking failed. Flat is not available during specified time</h4>
+    <button class="btn btn-success" (click)="newBooking()"><<Back</button>
+  </div>
+
+</div>
+
+

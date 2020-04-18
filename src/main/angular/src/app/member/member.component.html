@@ -1,0 +1,13 @@
+<div class="container" align="center">
+  <div id="row">
+    <div class="form-group">
+      <label style="color: darkgoldenrod; font-size: medium; margin: 10px" for="mapAutocomplete">Search for your flat location! </label>
+      <input id="mapAutocomplete" placeholder="Search for your banner location!" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+    </div>
+    <agm-map (mapRightClick)="setPointPosition($event)" [latitude]="latitude"  [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+      <agm-marker  [latitude]="latitude" [longitude]="longitude"></agm-marker>
+    </agm-map>
+  </div>
+  <button [routerLink]="['/register-point']" [ngStyle]="{'font-size': 'medium', 'color': 'black', 'margin':'10px', 'background-color': 'blue'}">Continue</button>
+  </div>
+

@@ -1,0 +1,42 @@
+<div class="container" align="center">
+  <div id="row">
+    <div id="mapContainer" align="right">
+      <div align="center">
+        <h1 style="color: darkgoldenrod; font-size: medium">Search for flats!</h1>
+      </div>
+      <div class="input-container" align="center">
+        <input id="pac-input" type="text"
+               placeholder="Enter a location" size="50">
+      </div>
+      <div id="map" style="margin: 10px"></div>
+    </div>
+    <div id="tableContainer" align="left">
+      <div class="table">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>City</th>
+            <th>Street</th>
+            <th>Address</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let point of points" (mouseover)="highlightRow(point)"
+              [ngClass]="{'highlight' : point.name == selectedName}"
+              (click)="setNewLocation(point.longitude, point.latitude)">
+            <td>{{point.name}}  <img src="../assets/BookNowButton.png" (click)="clickOnBookImage(point.name)"
+                                     [routerLink]="['/booking-main']"/></td>
+            <td>{{point.country}}</td>
+            <td>{{point.city}}</td>
+            <td>{{point.street}}</td>
+            <td>{{point.address}}</td>
+
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
