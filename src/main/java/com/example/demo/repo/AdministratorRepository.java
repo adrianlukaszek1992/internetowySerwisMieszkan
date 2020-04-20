@@ -13,8 +13,7 @@ import java.util.List;
 @Repository
 public interface AdministratorRepository extends CrudRepository<Administrator, Integer>{
 
-    @Modifying
-    @Query("update Administrator a set @Param")
+
     void editAdministrator(Administrator administrator);
 
     @Query("select u from User u")

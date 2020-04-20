@@ -20,7 +20,7 @@ public class AdministratorController {
 
     @GetMapping(value = "/editAdministrator")
     void editAdministrator(@RequestBody Administrator administrator) {
-        administratorRepository.editAdministrator(administrator);
+        administratorRepository.save(administrator);
     }
 
     @GetMapping(value = "/getAllUsers")

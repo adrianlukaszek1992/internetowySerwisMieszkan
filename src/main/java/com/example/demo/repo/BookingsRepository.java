@@ -13,28 +13,24 @@ import java.util.List;
 @Repository
 public interface BookingsRepository extends CrudRepository<Bookings, Integer> {
 
-    @Query("select b from Bookings b where userId= :userId")
+    @Query("select b from Bookings b where b.user_id= :userId")
     List<Bookings> getBookingsByUserId(@Param("userId") int userId);
 
-    @Query("select b from Bookings b where flatId= :flatId")
+    @Query("select b from Bookings b where b.flat_id= :flatId")
     List<Bookings> getBookingsByFlatId(@Param("flatId") int flatId);
 
-    @Query("select b from Bookings b where startDate >= :startDate and endDate <= endDate")
+    @Query("select b from Bookings b where b.start_date >= :startDate and b.end_date <= endDate")
     List<Bookings> getBookingsByDate(@Param("startDate") LocalDate startDate, @Param("endDate")  LocalDate endDate, int flatId);
 
-    @Modifying
-    @Query("insert into Bookings b @Param")
+
     void addBooking(Bookings booking);
 
-    @Modifying
-    @Query("update Bookings b set @Param")
+
     void editBookings(Bookings booking);
 
-    @Query("select b from Bookings b where bookingId= :bookingId")
+    @Query("select b from Bookings b where booking_id= :bookingId")
     Bookings getBookingByBookingId(@Param("bookingId") int bookingId);
 
-    @Modifying
-    @Query("delete Administrator a from  Administrator where bookingId = :bookingId")
     void deleteBooking(int bookingId);
 }
 

@@ -35,12 +35,8 @@ public class BookingsController {
     }
 
     @PostMapping(value =  "/upsertBooking")
-    void upsertBooking(@RequestBody Bookings booking, boolean isAdd) {
-        if(isAdd){
-            bookingsRepository.addBooking(booking);
-        }else{
-            bookingsRepository.editBookings(booking);
-        }
+    void upsertBooking(@RequestBody Bookings booking) {
+        bookingsRepository.save(booking);
     }
 
     @GetMapping(value = "/getBooking")
@@ -50,6 +46,6 @@ public class BookingsController {
 
     @GetMapping(value = "/deleteBooking")
     void deleteBooking(@RequestParam int bookingId) {
-        bookingsRepository.deleteBooking(bookingId);
+        bookingsRepository.delete(bookingsRepository.getBookingByBookingId(bookingId));
     }
 }

@@ -23,17 +23,13 @@ public class UserController {
 
     @GetMapping(value = "/deleteUser")
     void deleteUser(@RequestParam int userId) {
-        userRepository.deleteUser(userId);
+        userRepository.delete(userRepository.getUserById(userId));
     }
 
 
     @PostMapping(value = "/upsertUser")
-    void upsertUser(@RequestBody User user, boolean isAdd) {
-        if (isAdd) {
-            userRepository.addUser(user);
-        } else {
-            userRepository.editUser(user);
-        }
+    void upsertUser(@RequestBody User user) {
+        userRepository.save(user);
     }
 
 }

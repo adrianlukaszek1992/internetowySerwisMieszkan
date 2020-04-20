@@ -17,16 +17,12 @@ public interface FlatsRepository extends CrudRepository<Flats, Integer>{
     @Query("select f from Flats f where flatId =:flatId")
     Flats getFlatById(@Param("flatId") int flatId);
 
-    @Modifying
-    @Query("insert into Flats f @Param")
+
     void addFlat(Flats flat);
 
-    @Modifying
-    @Query("delete Bookings b from Bookings where flatId=:flatId")
+
     void deleteFlat(int flatId);
 
-    @Modifying
-    @Query("update Flats f set @Param")
     void editFlat (Flats flat);
 
     @Query("select f from Flats f where city =:city")

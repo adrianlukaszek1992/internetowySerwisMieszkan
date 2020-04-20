@@ -16,12 +16,8 @@ public class FlatsController {
     FlatsRepository repository;
 
     @PostMapping(value =  "/upsertFlat")
-    void upsertFlat(@RequestBody Flats flat, boolean isAdd) {
-        if(isAdd){
-            repository.addFlat(flat);
-        }else{
-            repository.editFlat(flat);
-        }
+    void upsertFlat(@RequestBody Flats flat) {
+        repository.save(flat);
     }
 
     @GetMapping(value = "/getFlat")
@@ -41,6 +37,6 @@ public class FlatsController {
 
     @GetMapping(value = "/deleteFlat")
     void deletFlat(@RequestParam int flatId) {
-        repository.deleteFlat(flatId);
+        repository.delete(repository.getFlatById(flatId));
     }
 }
