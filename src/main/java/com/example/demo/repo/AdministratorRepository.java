@@ -14,7 +14,7 @@ import java.util.List;
 public interface AdministratorRepository extends CrudRepository<Administrator, Integer>{
 
 
-    void editAdministrator(Administrator administrator);
+    //void editAdministrator(Administrator administrator);
 
     @Query("select u from User u")
     List<User> getAllUsers();

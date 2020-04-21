@@ -11,21 +11,21 @@ import java.util.List;
 @Repository
 public interface FlatsRepository extends CrudRepository<Flats, Integer>{
 
-    @Query("select f from Flats f where userId =:userId")
-    List<Flats> getFlatsByUserId(@Param("userid") int userId);
+    @Query("select f from Flats f where f.userId =:userId")
+    List<Flats> getFlatsByUserId(@Param("userId") int userId);
 
-    @Query("select f from Flats f where flatId =:flatId")
+    @Query("select f from Flats f where f.flatId =:flatId")
     Flats getFlatById(@Param("flatId") int flatId);
 
 
-    void addFlat(Flats flat);
+    //void addFlat(Flats flat);
 
+//
+//    void deleteFlat(int flatId);
+//
+//    void editFlat (Flats flat);
 
-    void deleteFlat(int flatId);
-
-    void editFlat (Flats flat);
-
-    @Query("select f from Flats f where city =:city")
+    @Query("select f from Flats f where f.city =:city")
     List<Flats> getFlatsByCity(@Param("city") String city);
 
 }

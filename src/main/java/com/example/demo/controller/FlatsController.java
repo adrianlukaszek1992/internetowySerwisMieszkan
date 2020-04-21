@@ -30,7 +30,7 @@ public class FlatsController {
         return repository.getFlatsByUserId(userId);
     }
 
-    @GetMapping(value = "/getUserFlats")
+    @GetMapping(value = "/getCityFlats")
     List<Flats>  getFlatsByCity(@RequestParam String city) {
         return repository.getFlatsByCity(city);
     }

@@ -10,17 +10,17 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends CrudRepository<User, Integer>{
 
 
-    void addUser(User user);
+    //void addUser(User user);
 
 
-    void deleteUser(@Param("userId") int userId);
+//    void deleteUser(@Param("userId") int userId);
 
     @Query("Select u from User u where u.login = :login AND u.password= :password")
     User getUserByLoginAndPassword(@Param("login") String login, @Param("password") String password);
 
-    @Query("Select u from User u where u.user_id = :userId")
+    @Query("Select u from User u where u.userId = :userId")
     User getUserById(@Param("userId") int userId);
 
-    void editUser(User user);
+    //void editUser(User user);
 
 }

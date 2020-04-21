@@ -13,24 +13,24 @@ import java.util.List;
 @Repository
 public interface BookingsRepository extends CrudRepository<Bookings, Integer> {
 
-    @Query("select b from Bookings b where b.user_id= :userId")
+    @Query("select b from Bookings b where b.userId= :userId")
     List<Bookings> getBookingsByUserId(@Param("userId") int userId);
 
-    @Query("select b from Bookings b where b.flat_id= :flatId")
+    @Query("select b from Bookings b where b.flatId= :flatId")
     List<Bookings> getBookingsByFlatId(@Param("flatId") int flatId);
 
-    @Query("select b from Bookings b where b.start_date >= :startDate and b.end_date <= endDate")
-    List<Bookings> getBookingsByDate(@Param("startDate") LocalDate startDate, @Param("endDate")  LocalDate endDate, int flatId);
+    @Query("select b from Bookings b where b.startDate >= :startDate and b.endDate <= :endDate and b.flatId = :flatId")
+    List<Bookings> getBookingsByDate(@Param("startDate") LocalDate startDate, @Param("endDate")  LocalDate endDate, @Param("flatId") int flatId);
 
 
-    void addBooking(Bookings booking);
+    //void addBooking(Bookings booking);
 
 
-    void editBookings(Bookings booking);
+    //void editBookings(Bookings booking);
 
-    @Query("select b from Bookings b where booking_id= :bookingId")
+    @Query("select b from Bookings b where b.bookingId= :bookingId")
     Bookings getBookingByBookingId(@Param("bookingId") int bookingId);
 
-    void deleteBooking(int bookingId);
+    //void deleteBooking(int bookingId);
 }
 
