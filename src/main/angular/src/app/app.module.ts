@@ -22,8 +22,9 @@ import {FormsModule} from '@angular/forms';
 import {AgmCoreModule} from '@agm/core';
 import {GoogleMapsComponent} from './visitor/google-maps/google-maps.component';
 import {MemberComponent} from './member/member.component';
-import {RegisterFlatComponent} from './register-flat/register-flat.component'
-
+import {RegisterFlatComponent} from './register-flat/register-flat.component';
+import { AdministratorComponent } from './administrator/administrator.component';
+import { UserComponent } from './user/user.component';
 @NgModule({
   imports: [
     AgmCoreModule.forRoot({
@@ -35,8 +36,6 @@ import {RegisterFlatComponent} from './register-flat/register-flat.component'
     HttpClientModule,
     routing,
     FormsModule
-
-
   ],
   declarations: [
     AppComponent,
@@ -46,9 +45,10 @@ import {RegisterFlatComponent} from './register-flat/register-flat.component'
     RegisterComponent,
     BookingMainComponent,
     VisitorComponent,
-    GoogleMapsComponent
-    ,
+    GoogleMapsComponent,
+    AdministratorComponent,
     MemberComponent,
+    UserComponent,
     RegisterFlatComponent],
   providers: [
     AuthGuard,

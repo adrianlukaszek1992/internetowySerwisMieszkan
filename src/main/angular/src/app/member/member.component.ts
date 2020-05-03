@@ -8,7 +8,7 @@ import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AgmCoreModule} from '@agm/core';
 import {Booking} from '../booking';
-import {BannerRegisterService} from '../banner-register.service';
+import {FlatService} from '../flatService';
 
 declare const google: any;
 
@@ -39,7 +39,7 @@ export class MemberComponent implements OnInit {
   constructor(
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private bannerRegisterService: BannerRegisterService
+    private bannerRegisterService: FlatService
   ) {
   }
 

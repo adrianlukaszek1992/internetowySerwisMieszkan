@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {BannerRegisterService} from '../banner-register.service';
+import {FlatService} from '../flatService';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CustomValidators} from 'ng4-validators';
 
@@ -19,7 +19,7 @@ export class RegisterFlatComponent implements OnInit {
   fullAdress: string;
 
 
-  constructor(private bannerRegisterService: BannerRegisterService, private formBuilder: FormBuilder) {
+  constructor(private bannerRegisterService: FlatService, private formBuilder: FormBuilder) {
   }
 
   ngOnInit() {

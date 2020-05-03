@@ -18,13 +18,6 @@ public interface FlatsRepository extends CrudRepository<Flats, Integer>{
     Flats getFlatById(@Param("flatId") int flatId);
 
 
-    //void addFlat(Flats flat);
-
-//
-//    void deleteFlat(int flatId);
-//
-//    void editFlat (Flats flat);
-
     @Query("select f from Flats f where f.city =:city")
     List<Flats> getFlatsByCity(@Param("city") String city);
 

@@ -17,21 +17,24 @@ public class BookingsController {
     BookingsRepository bookingsRepository;
 
     @GetMapping(value = "/userBookings")
-    List<Bookings> getUserBookings(@RequestParam int userId) {
-        return bookingsRepository.getBookingsByUserId(userId);
+    List<Bookings> getUserBookings(@RequestParam String userId) {
+        int userIdInt = Integer.parseInt(userId);
+        return bookingsRepository.getBookingsByUserId(userIdInt);
     }
 
 
     @GetMapping(value = "/flatBookings")
-    List<Bookings> getFlatBookings(@RequestParam int flatId) {
-        return bookingsRepository.getBookingsByFlatId(flatId);
+    List<Bookings> getFlatBookings(@RequestParam String flatId){
+    int flatIdInt = Integer.parseInt(flatId);
+        return bookingsRepository.getBookingsByFlatId(flatIdInt);
     }
 
     @GetMapping(value = "/bookingsByDate")
-    List<Bookings> getBookingsByDate(@RequestParam String startDate, String endDate, int flatId) {
+    List<Bookings> getBookingsByDate(@RequestParam String startDate, String endDate, String flatId) {
+        int flatIdInt = Integer.parseInt(flatId);
         LocalDate startDateLD = LocalDate.parse(startDate);
         LocalDate endDateLD = LocalDate.parse(endDate);
-        return bookingsRepository.getBookingsByDate(startDateLD, endDateLD, flatId);
+        return bookingsRepository.getBookingsByDate(startDateLD, endDateLD, flatIdInt);
     }
 
     @PostMapping(value =  "/upsertBooking")
@@ -40,12 +43,14 @@ public class BookingsController {
     }
 
     @GetMapping(value = "/getBooking")
-    Bookings getBooking(@RequestParam int bookingId) {
-        return bookingsRepository.getBookingByBookingId(bookingId);
+    Bookings getBooking(@RequestParam String bookingId) {
+        int bookingIdInt = Integer.parseInt(bookingId);
+        return bookingsRepository.getBookingByBookingId(bookingIdInt);
     }
 
     @GetMapping(value = "/deleteBooking")
-    void deleteBooking(@RequestParam int bookingId) {
-        bookingsRepository.delete(bookingsRepository.getBookingByBookingId(bookingId));
+    void deleteBooking(@RequestParam String bookingId) {
+        int bookingIdInt = Integer.parseInt(bookingId);
+        bookingsRepository.delete(bookingsRepository.getBookingByBookingId(bookingIdInt));
     }
 }

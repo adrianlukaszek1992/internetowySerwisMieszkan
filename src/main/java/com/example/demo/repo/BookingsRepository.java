@@ -23,14 +23,8 @@ public interface BookingsRepository extends CrudRepository<Bookings, Integer> {
     List<Bookings> getBookingsByDate(@Param("startDate") LocalDate startDate, @Param("endDate")  LocalDate endDate, @Param("flatId") int flatId);
 
 
-    //void addBooking(Bookings booking);
-
-
-    //void editBookings(Bookings booking);
-
     @Query("select b from Bookings b where b.bookingId= :bookingId")
     Bookings getBookingByBookingId(@Param("bookingId") int bookingId);
 
-    //void deleteBooking(int bookingId);
 }
 

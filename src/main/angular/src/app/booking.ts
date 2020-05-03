@@ -1,8 +1,5 @@
 export class Booking {
-  name: string;
-  lastname: string;
-  email: string;
-  startDate: string;
-  endDate: string;
-  pointName: string;
+  public constructor(init?: Partial<Booking>) {
+    Object.assign(this, init);
+  }
 }
